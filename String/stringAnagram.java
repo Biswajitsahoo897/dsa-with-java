@@ -29,11 +29,11 @@ public class stringAnagram {
         if(s.length()!=t.length()) return false; 
         int[] count = new int[26];
 
-        for (final char c : s.toCharArray()){
+        for (char c : s.toCharArray()){
             ++count[c - 'a'];
         }
 
-        for (final char c : t.toCharArray()) {
+        for (char c : t.toCharArray()) {
             if (count[c - 'a'] == 0) return false;
             --count[c - 'a'];
         }
@@ -44,6 +44,6 @@ public class stringAnagram {
         String s1="listen";
         String s2="silent";
         isAnagramUsingCharFrequency(s1, s2);
-        isAnagram(s1, s2);
+        System.out.println(isAnagram(s1, s2)? "Anagram" : "Not Anagram");
     }
 }
