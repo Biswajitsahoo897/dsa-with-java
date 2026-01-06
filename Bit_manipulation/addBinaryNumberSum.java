@@ -36,3 +36,30 @@ public class addBinaryNumberSum {
         // System.out.println(binToDec("1011")+binToDec("1010"));
     }
 }
+
+// Leetcode - 67 
+// Expected solution
+
+class solution{
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
+        while (i >= 0 || j >= 0 || carry == 1) {
+        if (i >= 0)
+            carry += a.charAt(i--) - '0';
+        if (j >= 0)
+            carry += b.charAt(j--) - '0';
+        sb.append(carry % 2);
+        carry /= 2;
+        }
+        return sb.reverse().toString();
+    }
+    public static void main(String[] args) {
+        solution sol = new solution();
+        String result = sol.addBinary("1101", "11");
+        System.out.println(result); // Output: "10000"
+    }
+}
