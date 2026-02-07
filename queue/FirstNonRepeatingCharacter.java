@@ -16,6 +16,7 @@ public class FirstNonRepeatingCharacter {
             while (!q.isEmpty() && freq[q.peek()-'a']>1) {
                 q.remove();
             }
+            // display
             if(q.isEmpty()){
                 System.out.print(-1+" ");
             }else{
