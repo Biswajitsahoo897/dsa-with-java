@@ -91,3 +91,10 @@ public class StackUsingTwoQueue {
         // System.out.println(StackUsingTwoQueue.peek());
     }
 }
+
+/*
+Notes:
+only one queue is empty at a time 
+after the pop() or peek() operation , the other queue becomes the main queue
+move elements except the last one to another queue  the last element left behind , is the top element of the stack
+*/
