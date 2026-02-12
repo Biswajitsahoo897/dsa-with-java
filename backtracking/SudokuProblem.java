@@ -51,7 +51,7 @@ public class SudokuProblem {
                         return true;
                     }
                 }
-                b[row][col]=0;
+                b[row][col]=0; //This is the backtrack step, if digit didnt lead to solution then remove it
             }
         }
         return false;
