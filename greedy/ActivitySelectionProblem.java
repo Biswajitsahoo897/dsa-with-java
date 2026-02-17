@@ -42,7 +42,7 @@ public class ActivitySelectionProblem {
             
         }
         
-        // Lamada function in java 
+        // Lambada Expression in java 
         // Comparator is an interface for sorting java objects. only sorted the end time
         Arrays.sort(activity, Comparator.comparingDouble(o->o[2]));
         
@@ -67,7 +67,7 @@ public class ActivitySelectionProblem {
     }
     public static void main(String[] args) {
         activitySelectionSorted(); //if the end time is sorted
-        
+
         activitySelectionUnSorted();
     }
 }
