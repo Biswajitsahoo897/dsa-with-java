@@ -40,6 +40,7 @@ public class FractionalKnapsack {
                 list.add((int)knapsack[i][0]);
                 currValue+=knapsack[i][3]*W;
                 break;
+                // no more space left , bag is full 
             }
         }
         
