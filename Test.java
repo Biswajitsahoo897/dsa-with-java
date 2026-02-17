@@ -4,30 +4,24 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int t=sc.nextInt();
+        int[][] arr = {
+            {1, 2, 3},
+            {10, 11, 8},
+            {3, 14, 15},
+            {16, 17, 1},
+            {9, 5, 6},
+            {8, 8, 97},
+            {19, 20, 21}
+        };
 
-        while(t-->0){
-            long num=sc.nextLong();
-            if(num==0){
-                System.out.println(1);
-                continue;
+        Arrays.sort(arr,Comparator.comparingInt(o->o[1]));
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j]+" ");
             }
-            long power=1;
-            int i=0;
-            while(power<num){
-                power=(long)Math.pow(2, i);
-                i++;
-            }
-            if(power==num){
-                System.out.println("True");
-                continue;
-            }
-            else{
-                System.out.println("False");
-            }
+            System.out.println();
         }
-        sc.close();
     }
 }
 
