@@ -30,11 +30,11 @@ public class rotateArray {
         if(n==0)return;
         int d=2;
         d%=n;
+        // then reverse the entire array
+        reverse(nums, 0,n-1);
         // first reverse d element
         reverse(nums, 0,d-1);
         // reverse remaining n-d elements
         reverse(nums, d,n-1);
-        // then reverse the entire array
-        reverse(nums, 0,n-1);
     }
 }
