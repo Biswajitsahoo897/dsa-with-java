@@ -2,7 +2,7 @@ package Sorting;
 import java.util.*;
 
 public class sumOfPairs {
-    static boolean sumOfPairs(int []arr,int k){
+    static boolean sumOfPairsFun(int []arr,int k){
         int p1=0,p2=arr.length-1;
 
         while(p1<p2){
@@ -28,7 +28,7 @@ public class sumOfPairs {
                 arr[i]=sc.nextInt();
             }
             Arrays.sort(arr);
-            if(sumOfPairs(arr,k)){
+            if(sumOfPairsFun(arr,k)){
                 System.out.println("True");
             }else{
                 System.out.println("False");
