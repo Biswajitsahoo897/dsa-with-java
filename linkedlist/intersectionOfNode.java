@@ -1,26 +1,26 @@
 package linkedlist;
 
 import java.util.HashSet;
-class ListNode{
+class Node{
     int val;
-    ListNode next;
-    ListNode(int val){
+    Node next;
+    Node(int val){
         this.val=val;
         this.next=null;
     }
 }
 public class intersectionOfNode {
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        HashSet<ListNode> setNode=new HashSet<>();
+    public Node getIntersectionNode(Node headA, Node headB) {
+        HashSet<Node> setNode=new HashSet<>();
 
-        ListNode curr1=headA;
+        Node curr1=headA;
         while(curr1!=null){
             setNode.add(curr1);
             curr1=curr1.next;
         }
         
-        ListNode curr=headB;
+        Node curr=headB;
         while(curr!=null){
             if(setNode.contains(curr)){
                  //we are checking the object refrernce or the address of the node not the value
