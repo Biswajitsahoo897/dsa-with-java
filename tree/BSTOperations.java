@@ -64,6 +64,20 @@ public class BSTOperations {
         preOrder(root.left);
         preOrder(root.right);
     }
+    
+    static void inOrder(Node root){
+        if(root==null) return;
+        inOrder(root.left);
+        System.out.print(root.value+" ");
+        inOrder(root.right);
+    }
+
+    static void postOrder(Node root){
+        if(root==null) return;
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.value+" ");
+    }
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
