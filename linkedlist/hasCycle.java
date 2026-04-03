@@ -2,15 +2,15 @@ package linkedlist;
 
 import java.util.HashSet;
 
-class ListNode{
-    int val;
-    ListNode next;
-    ListNode(int val){
-        this.val=val;
-        this.next=null;
-    }
-}
 public class hasCycle {
+    class ListNode{
+        int val;
+        ListNode next;
+        ListNode(int val){
+            this.val=val;
+            this.next=null;
+        }
+    }
     // this method is known as floyd’s cycle detection algo
     public boolean hasCycleF1(ListNode head) {
         ListNode slow = head , fast = head ;
@@ -32,5 +32,8 @@ public class hasCycle {
             head=head.next;
         }
         return false;
+    }
+    public static void main(String[] args) {
+        
     }
 }
