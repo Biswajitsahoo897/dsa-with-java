@@ -68,15 +68,36 @@ public class BuildBinaryTree {
         }
 
     }
+
+    static int sumOfTreeNode(Node root){
+        if(root==null){
+            return 0;
+        }
+        return root.data+sumOfTreeNode(root.left)+sumOfTreeNode(root.right);
+    } 
+
+    static int hightOfTree(Node root){
+        if(root==null) return 0;
+        return 1+Math.max(hightOfTree(root.left),hightOfTree(root.right));
+    }
+
+    static int numberOfNodes(Node root){
+        if(root==null) return 0;
+        return 1+numberOfNodes(root.left)+numberOfNodes(root.right);
+    }
+    
     public static void main(String[] args) {
         int []nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         root=buildTree(nodes);
 
-        System.out.println(root.left);
-        postorderTraversal(root);
-        System.out.println();
+        // System.out.println(root.left);
+        // postorderTraversal(root);
+        // System.out.println();
 
-        levelOrderTraversalBT();
+        // levelOrderTraversalBT();
 
+        // System.out.println(sumOfTreeNode(root));
+        // System.out.println(hightOfTree(root));
+        System.out.println(numberOfNodes(root));
     }
 }
