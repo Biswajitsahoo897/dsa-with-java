@@ -29,6 +29,7 @@ public class DiameterOfTree {
         return 1+Math.max(hightOfTree(root.left),hightOfTree(root.right));
     }
 
+    // Approach - 1 (TC=> O(N*N))
     static int diameterOfTree(Node root){
 
         if(root==null) return 0;
@@ -44,10 +45,26 @@ public class DiameterOfTree {
 
     }
 
+    // Approach 2 (TC=> O(N))
+
+    static int diameter=0;
+    static int diameterOfTree2(Node root){
+
+        if(root==null) return 0;
+        int left=diameterOfTree2(root.left);
+        int right=diameterOfTree2(root.right);
+
+        diameter=Math.max(diameter,left+right+1);
+
+        return 1+Math.max(left, right);
+    }
+
     public static void main(String[] args) {
         int []nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         root=buildTree(nodes);
 
         System.out.println(diameterOfTree(root));
+        diameterOfTree2(root);
+        System.out.println(diameter);
     }
 }
