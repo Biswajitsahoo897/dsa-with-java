@@ -2,6 +2,7 @@ package Array;
 
 public class basicOperations {
     public static void printArray(int array[],int nonChangable){
+        nonChangable=45;
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
