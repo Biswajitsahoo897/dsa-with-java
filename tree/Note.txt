@@ -1,0 +1,76 @@
+
+BFS (Breadth First Search)
+===========================
+    -Explore level by level
+
+    -First root
+    -Then all children
+    -Then all grandchildren
+    -Uses Queue (FIFO)
+
+    use: kth level nodes, minimum distance, level order traversal , top view , left view
+
+
+CODE:
+    void bfs(Node root){
+        if(root == null) return;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()){
+            Node curr = q.poll();
+            System.out.print(curr.data + " ");
+
+            if(curr.left != null) q.add(curr.left);
+            if(curr.right != null) q.add(curr.right);
+        }
+    }
+
+
+DFS (Depth First Search)
+===========================
+
+    -Go as deep as possible, then backtrack
+    -Root -> left -> left -> left...
+    -Then backtrack -> right
+    -Uses Recursion / Stack
+
+    use: LCA , diameter of tree, backtracking , path finding
+
+
+
+    divided into 3 types
+    preorder , postorder , inorder
+
+    =CODE:=
+
+    1. Preorder (Root -> Left -> Right)
+    ==================================
+    void dfs(Node root){
+        if(root == null) return;
+
+        System.out.print(root.data + " ");
+        dfs(root.left);
+        dfs(root.right);
+    }
+
+    2. Inorder (Left -> Root -> Right)
+    ==================================
+    void inorder(Node root){
+        if(root == null) return;
+
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
+
+    3. Postorder (Left -> Right -> Root)
+    ==================================
+    void postorder(Node root){
+        if(root == null) return;
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data + " ");
+    }
