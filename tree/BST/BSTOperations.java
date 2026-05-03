@@ -56,6 +56,20 @@ public class BSTOperations {
         return root;
     }
 
+    static void printInRange(Node root,int k1,int k2){
+        if(root==null) return;
+        else if(root.value>=k1 && root.value<=k2){
+            printInRange(root.left, k1, k2);
+            System.out.print(root.value+" ");
+            printInRange(root.right, k1, k2);
+        }
+        else if(root.value<k1){
+            printInRange(root.right, k1, k2);
+        }else{
+            printInRange(root.left, k1, k2);
+        }
+    }
+    
     static boolean search(Node root,int x){
         if(root==null) return false;
         if(root.value==x){
@@ -127,6 +141,7 @@ public class BSTOperations {
                     preOrder(root);
                     System.out.println();
                 }
+                printInRange(root, 1, 4);
             sc.close();
 
             }
