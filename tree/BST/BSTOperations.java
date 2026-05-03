@@ -1,4 +1,4 @@
-package tree;
+package tree.BST;
 import java.util.*;
 public class BSTOperations {
 
@@ -12,6 +12,7 @@ public class BSTOperations {
             right=null;
         }
     }
+
     static Node insert(Node root,int x){
         if(root==null) return new Node(x);
         if(root.value<x){
@@ -22,6 +23,7 @@ public class BSTOperations {
         }
         return root;
     }
+
     static Node delete(Node root,int x){
         if(root==null) return null;
         if(root.value>x){
@@ -30,20 +32,30 @@ public class BSTOperations {
         else if(root.value<x){
             root.right=delete(root.right,x);
         }
-        else if(root.value==x){
+        else{
+            // Case -1 leaf Node  
+            if(root.left==null && root.right==null) return null;
+
+            // Case -2 (single node either left or right) 
+            // delete node and replace with the child node 
+
             if(root.right==null){
                 return root.left;
             }
             if(root.left==null){
                 return root.right;
             }
+
+            //Case -3 (Two children) 
+            // Replace the value with inorder successor
+            // delete the node for inorder successor
             Node temp=findMin(root.right);
             root.value=temp.value;
             root.right=delete(root.right,temp.value);
-        
         }
         return root;
     }
+
     static boolean search(Node root,int x){
         if(root==null) return false;
         if(root.value==x){
@@ -52,19 +64,22 @@ public class BSTOperations {
         if(root.value<x) return search(root.right,x);
         else return search(root.left,x);
     }
+    
     static Node findMin(Node root){
         while(root.left!=null){
             root=root.left;
         }
         return root;
     }
+
     static void preOrder(Node root){
         if(root==null) return;
         System.out.print(root.value+" ");
         preOrder(root.left);
         preOrder(root.right);
     }
-    
+
+    //Always gives the sorted order traversal 
     static void inOrder(Node root){
         if(root==null) return;
         inOrder(root.left);

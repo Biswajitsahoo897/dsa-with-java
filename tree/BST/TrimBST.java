@@ -1,4 +1,4 @@
-package tree;
+package tree.BST;
 
 import java.util.*;
 public class TrimBST {
