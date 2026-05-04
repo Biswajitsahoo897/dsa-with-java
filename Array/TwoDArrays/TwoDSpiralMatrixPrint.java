@@ -7,22 +7,26 @@ public class TwoDSpiralMatrixPrint {
         int endRow=matrix.length-1;
         int endCol=matrix[0].length-1;
 
-        while (startRow<=endCol && startCol<=endCol) {
+        while (startRow<=endRow && startCol<=endCol) {
             // Top
             for(int i=startCol;i<=endCol;i++){
-                System.out.print(matrix[startCol][i]+" ");
+                System.out.print(matrix[startRow][i]+" ");
             }
             // right
             for(int j=startRow+1;j<=endRow;j++){
                 System.out.print(matrix[j][endCol]+" ");
             }
             // down
-            for(int j=endCol-1;j>=startCol;j--){
-                System.out.print(matrix[endRow][j]+" ");
+            if(startRow<endRow){
+                for(int j=endCol-1;j>=startCol;j--){
+                    System.out.print(matrix[endRow][j]+" ");
+                }
             }
             // Left
-            for(int j=endRow-1;j>=startRow+1;j--){
-                System.out.print(matrix[j][startRow]+" ");
+            if(startCol<endCol){                
+                for(int j=endRow-1;j>=startRow+1;j--){
+                    System.out.print(matrix[j][startCol]+" ");
+                }
             }
 
             startRow++;
