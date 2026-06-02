@@ -17,20 +17,23 @@ public class countSetBits {
             System.out.println(c);
         }
         sc.close();
-        
+        countBits(5);
         
     }
 
 
 
     // Leetcode 338 (Using DP) TC => O(N)
-    public int[] countBits(int n) {
+    public static void countBits(int n) {
         int []ans=new int[n+1];
         // ans[0]=0;
         for(int i=1;i<=n;i++){
-            ans[i]=ans[i/2]+(i&1);
+            ans[i]=ans[i>>1]+(i&1); //ans[i/2] both are same
         }
-        return ans;
+        // return ans;
+        for(int x:ans){
+            System.out.print(x+" ");
+        }
     }
 }
 
