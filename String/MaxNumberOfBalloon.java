@@ -24,12 +24,6 @@ public class MaxNumberOfBalloon {
     }
     public static void main(String[] args) {
         String s="loonbalxballoon";
-        // System.out.println(maxNumberOfBalloons(s));
-        if(s.contains("balloon")){
-            System.out.println("yes");
-        }else{
-            System.out.println("no");
-
-        }
+        System.out.println(maxNumberOfBalloons(s));
     }
 }
