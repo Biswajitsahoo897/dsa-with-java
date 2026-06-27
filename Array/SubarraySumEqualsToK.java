@@ -7,12 +7,13 @@ public class SubarraySumEqualsToK {
         HashMap<Integer,Integer> map=new HashMap<>();
         int currSum=0;
         int count=0;
+        // map.put(0,1);  //either do this or u can use the currSum==k 
         for(int num:nums){
             currSum+=num;
 
-            if(currSum==k){
-                count++;
-            }
+            // if(currSum==k){
+            //     count++;
+            // }
 
             if(map.containsKey(currSum-k)){
                 count+=map.get(currSum-k);    
