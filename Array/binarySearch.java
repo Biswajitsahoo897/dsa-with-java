@@ -5,7 +5,7 @@ public class binarySearch {
         int start=0,end=num.length-1;
         // this method only works for the sorted array
         while (start<end) {
-            int mid=(start+end)/2;
+            int mid=start+(end-start)/2;
             if(num[mid]==target) return mid; //FOUND
             if(num[mid]<target) {
                 start=mid+1;
